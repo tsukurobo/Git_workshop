@@ -76,6 +76,33 @@ git config user.email
 
 ![](pictures/2.png)
 
+~2023/07/10追記~  
+今設定したメールアドレスはGitHubのリポジトリをPublicにすると公開されます。  
+なのでメールアドレスを公開したくないよって人のためにGitHubがダミーのメールアドレス(noreplyメールアドレス)を用意してくれています。  
+
+まずGitHubにログインし、https://github.com/settings/emails にアクセスします。以下の画像のように、「Keep my email addresses private」にチェックを入れてください。 
+そのすぐ下あたりに`ID+USERNAME@users.noreply.github.com`みたいな感じのメールアドレスが表示されているはずです。これがnoreplyメールアドレスです。
+
+![](pictures/noreply.png)
+
+では次にこのメールアドレスをGitに登録します。
+
+GitBashを開いて以下のコマンドを入力してください。`ID+USERNAME@users.noreply.github.com`の所は先ほど確認したnoreplyメールアドレスをいれてください。
+
+```
+git config --global user.email "ID+USERNAME@users.noreply.github.com"
+```
+
+設定できたか以下のコマンドで確認しましょう。
+
+```
+git config user.email
+```
+
+ちゃんとnoreplyメールアドレスが表示されたら変更完了です。
+
+~追記終わり~
+
 ## SourceTreeをインストールしよう
 実はもうすでにGitを使うことはできるんですが、今の状態だとCLI(コマンドラインインタフェース)でしか使えなくてちょっとわかりづらいです。
 
